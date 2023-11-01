@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  
+  - let results=[{name:"GulabJamun",price:150,quantity:50},{name:"Thiramisu",price:500,quantity:10},{name:"CheeseCake",price:670,quantity:10}]
+  div(class="container-fluid")
+  div(class="row")
+   each value,index in results
+    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.name} Desert, cost #{value.price}, quantity #{value.quantity}
+   
